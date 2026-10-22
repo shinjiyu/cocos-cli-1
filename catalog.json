@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-14T02:28:41.203Z",
+  "generatedAt": "2026-10-22T03:00:13.555Z",
   "layers": {
     "mcp": {
       "count": 104,
@@ -178,53 +178,6 @@
         ]
       },
       {
-        "name": "preview",
-        "description": "Preview a Cocos project",
-        "sourceFile": "src/commands/preview.ts",
-        "options": [
-          {
-            "flags": "-j, --project <path>",
-            "description": "Path to the Cocos project",
-            "required": false
-          },
-          {
-            "flags": "-p, --port <number>",
-            "description": "Port number for the preview server",
-            "required": false
-          },
-          {
-            "flags": "-P, --platform <platform>",
-            "description": "Target web platform (web-desktop or web-mobile)",
-            "required": false
-          },
-          {
-            "flags": "-c, --build-config <path>",
-            "description": "Specify build config file path",
-            "required": false
-          },
-          {
-            "flags": "-s, --scene <sceneUrlOrUuid>",
-            "description": "Start scene (uuid or db:// url); defaults to project start scene",
-            "required": false
-          },
-          {
-            "flags": "--no-open",
-            "description": "Do not open the preview URL in browser",
-            "required": false
-          },
-          {
-            "flags": "--build",
-            "description": "Use the legacy build-based preview (full build then serve) instead of the dynamic serve preview",
-            "required": false
-          },
-          {
-            "flags": "--scene-editor",
-            "description": "Start the scene editor debug preview instead of the game preview",
-            "required": false
-          }
-        ]
-      },
-      {
         "name": "publish",
         "description": "Publish a previously uploaded Cocos package",
         "sourceFile": "src/commands/publish.ts",
@@ -259,53 +212,6 @@
         ]
       },
       {
-        "name": "simulator",
-        "description": "Build and launch the Cocos simulator preview",
-        "sourceFile": "src/commands/simulator.ts",
-        "options": [
-          {
-            "flags": "-j, --project <path>",
-            "description": "Path to the Cocos project",
-            "required": false
-          },
-          {
-            "flags": "-p, --port <number>",
-            "description": "Port number for the preview server",
-            "required": false
-          },
-          {
-            "flags": "-s, --scene <sceneUrlOrUuid>",
-            "description": "Start scene (uuid or db:// url); defaults to project start scene",
-            "required": false
-          },
-          {
-            "flags": "-e, --engine-path <path>",
-            "description": "Path to the Cocos engine (defaults to the bundled engine)",
-            "required": false
-          },
-          {
-            "flags": "--build",
-            "description": "Build the native executable and runtime artifacts before launching",
-            "required": false
-          },
-          {
-            "flags": "--resolution <WxH>",
-            "description": "Simulator window resolution, e.g. 960x640",
-            "required": false
-          },
-          {
-            "flags": "--landscape",
-            "description": "Start in landscape orientation",
-            "required": false
-          },
-          {
-            "flags": "--show-console",
-            "description": "Show the simulator console window",
-            "required": false
-          }
-        ]
-      },
-      {
         "name": "start-mcp-server",
         "description": "Start MCP (Model Context Protocol) server for Cocos project",
         "sourceFile": "src/commands/mcp-server.ts",
@@ -318,6 +224,16 @@
           {
             "flags": "-p, --port <number>",
             "description": "Port number for the MCP server",
+            "required": false
+          },
+          {
+            "flags": "--scene-session-file <path>",
+            "description": "Write a shared scene connection descriptor for a separate editor process",
+            "required": false
+          },
+          {
+            "flags": "--scene-session-origin <origin>",
+            "description": "Allow this editor WebView origin to connect to the shared scene session",
             "required": false
           }
         ]
@@ -1041,69 +957,9 @@
         "sourceFile": "src/lib/scene/scene.ts",
         "exports": [
           {
-            "name": "getMotionTimelineStats",
-            "kind": "function",
-            "signature": "getMotionTimelineStats()",
-            "sourceFile": "src/lib/scene/scene.ts"
-          },
-          {
-            "name": "hideMotion",
-            "kind": "function",
-            "signature": "hideMotion()",
-            "sourceFile": "src/lib/scene/scene.ts"
-          },
-          {
             "name": "init",
             "kind": "function",
             "signature": "init()",
-            "sourceFile": "src/lib/scene/scene.ts"
-          },
-          {
-            "name": "isMotionActive",
-            "kind": "function",
-            "signature": "isMotionActive()",
-            "sourceFile": "src/lib/scene/scene.ts"
-          },
-          {
-            "name": "onMotionMouseDown",
-            "kind": "function",
-            "signature": "onMotionMouseDown(action: { x: number; y: number; button: number })",
-            "sourceFile": "src/lib/scene/scene.ts"
-          },
-          {
-            "name": "onMotionMouseMove",
-            "kind": "function",
-            "signature": "onMotionMouseMove(action: { movementX: number; movementY: number })",
-            "sourceFile": "src/lib/scene/scene.ts"
-          },
-          {
-            "name": "onMotionMouseUp",
-            "kind": "function",
-            "signature": "onMotionMouseUp(action: { x: number; y: number })",
-            "sourceFile": "src/lib/scene/scene.ts"
-          },
-          {
-            "name": "onMotionMouseWheel",
-            "kind": "function",
-            "signature": "onMotionMouseWheel(action: { wheelDeltaY: number; wheelDeltaX: number })",
-            "sourceFile": "src/lib/scene/scene.ts"
-          },
-          {
-            "name": "pauseMotion",
-            "kind": "function",
-            "signature": "pauseMotion()",
-            "sourceFile": "src/lib/scene/scene.ts"
-          },
-          {
-            "name": "playMotion",
-            "kind": "function",
-            "signature": "playMotion()",
-            "sourceFile": "src/lib/scene/scene.ts"
-          },
-          {
-            "name": "queryMotionImage",
-            "kind": "function",
-            "signature": "queryMotionImage(info: { width: number; height: number })",
             "sourceFile": "src/lib/scene/scene.ts"
           },
           {
@@ -1119,45 +975,15 @@
             "sourceFile": "src/lib/scene/scene.ts"
           },
           {
-            "name": "setMotionModel",
+            "name": "startSessionServer",
             "kind": "function",
-            "signature": "setMotionModel(uuid: string)",
-            "sourceFile": "src/lib/scene/scene.ts"
-          },
-          {
-            "name": "setMotionParameter",
-            "kind": "function",
-            "signature": "setMotionParameter(axis: 'value' | 'x' | 'y', value: number)",
-            "sourceFile": "src/lib/scene/scene.ts"
-          },
-          {
-            "name": "setMotionTime",
-            "kind": "function",
-            "signature": "setMotionTime(time: number)",
-            "sourceFile": "src/lib/scene/scene.ts"
-          },
-          {
-            "name": "setMotionVariable",
-            "kind": "function",
-            "signature": "setMotionVariable(name: string, value: number)",
-            "sourceFile": "src/lib/scene/scene.ts"
-          },
-          {
-            "name": "showMotion",
-            "kind": "function",
-            "signature": "showMotion(desc: MotionPreviewDesc)",
+            "signature": "startSessionServer(options: import('../../core/scene/session/server')",
             "sourceFile": "src/lib/scene/scene.ts"
           },
           {
             "name": "startupWorker",
             "kind": "function",
             "signature": "startupWorker(projectPath: string)",
-            "sourceFile": "src/lib/scene/scene.ts"
-          },
-          {
-            "name": "stopMotion",
-            "kind": "function",
-            "signature": "stopMotion()",
             "sourceFile": "src/lib/scene/scene.ts"
           }
         ]
@@ -1258,116 +1084,50 @@
         "exports": [
           {
             "name": "build",
-            "kind": "function",
-            "signature": "build(enginePath?: string)",
+            "kind": "const",
+            "signature": "build",
             "sourceFile": "src/lib/simulator/simulator.ts"
           },
           {
             "name": "buildNative",
-            "kind": "function",
-            "signature": "buildNative(enginePath?: string)",
+            "kind": "const",
+            "signature": "buildNative",
             "sourceFile": "src/lib/simulator/simulator.ts"
           },
           {
             "name": "buildRuntime",
-            "kind": "function",
-            "signature": "buildRuntime(enginePath?: string)",
+            "kind": "const",
+            "signature": "buildRuntime",
             "sourceFile": "src/lib/simulator/simulator.ts"
           },
           {
             "name": "getExecutablePath",
-            "kind": "function",
-            "signature": "getExecutablePath(enginePath?: string)",
+            "kind": "const",
+            "signature": "getExecutablePath",
             "sourceFile": "src/lib/simulator/simulator.ts"
           },
           {
             "name": "getManifest",
-            "kind": "function",
-            "signature": "getManifest(enginePath?: string)",
-            "sourceFile": "src/lib/simulator/simulator.ts"
-          },
-          {
-            "name": "getResourcesPath",
-            "kind": "function",
-            "signature": "getResourcesPath(enginePath?: string)",
-            "sourceFile": "src/lib/simulator/simulator.ts"
-          },
-          {
-            "name": "getStatus",
-            "kind": "function",
-            "signature": "getStatus(id: string)",
-            "sourceFile": "src/lib/simulator/simulator.ts"
-          },
-          {
-            "name": "getWritablePath",
-            "kind": "function",
-            "signature": "getWritablePath(enginePath?: string)",
-            "sourceFile": "src/lib/simulator/simulator.ts"
-          },
-          {
-            "name": "init",
-            "kind": "function",
-            "signature": "init(projectPath: string)",
+            "kind": "const",
+            "signature": "getManifest",
             "sourceFile": "src/lib/simulator/simulator.ts"
           },
           {
             "name": "isBuilt",
-            "kind": "function",
-            "signature": "isBuilt(enginePath?: string)",
-            "sourceFile": "src/lib/simulator/simulator.ts"
-          },
-          {
-            "name": "launchPreview",
-            "kind": "function",
-            "signature": "launchPreview(options: ISimulatorLaunchPreviewOptions = {})",
-            "sourceFile": "src/lib/simulator/simulator.ts"
-          },
-          {
-            "name": "listSessions",
-            "kind": "function",
-            "signature": "listSessions()",
+            "kind": "const",
+            "signature": "isBuilt",
             "sourceFile": "src/lib/simulator/simulator.ts"
           },
           {
             "name": "onDidChangeBuildState",
-            "kind": "function",
-            "signature": "onDidChangeBuildState(listener: (state: ISimulatorBuildState)",
-            "sourceFile": "src/lib/simulator/simulator.ts"
-          },
-          {
-            "name": "onDidChangeSession",
-            "kind": "function",
-            "signature": "onDidChangeSession(listener: (session: ISimulatorSessionInfo)",
+            "kind": "const",
+            "signature": "onDidChangeBuildState",
             "sourceFile": "src/lib/simulator/simulator.ts"
           },
           {
             "name": "onLog",
-            "kind": "function",
-            "signature": "onLog(listener: (entry: ISimulatorLogEntry)",
-            "sourceFile": "src/lib/simulator/simulator.ts"
-          },
-          {
-            "name": "prepareResources",
-            "kind": "function",
-            "signature": "prepareResources(options: ISimulatorPrepareOptions = {})",
-            "sourceFile": "src/lib/simulator/simulator.ts"
-          },
-          {
-            "name": "start",
-            "kind": "function",
-            "signature": "start(options: ISimulatorStartOptions)",
-            "sourceFile": "src/lib/simulator/simulator.ts"
-          },
-          {
-            "name": "stop",
-            "kind": "function",
-            "signature": "stop(id: string)",
-            "sourceFile": "src/lib/simulator/simulator.ts"
-          },
-          {
-            "name": "stopAll",
-            "kind": "function",
-            "signature": "stopAll()",
+            "kind": "const",
+            "signature": "onLog",
             "sourceFile": "src/lib/simulator/simulator.ts"
           }
         ]
@@ -1386,11 +1146,11 @@
       {
         "name": "base",
         "path": "src/core/base",
-        "description": "16 个 TypeScript 文件（深度≤2 扫描）",
+        "description": "18 个 TypeScript 文件（深度≤2 扫描）",
         "entryFiles": [
           "src/core/base/"
         ],
-        "exportCount": 72
+        "exportCount": 81
       },
       {
         "name": "builder",
@@ -1413,11 +1173,11 @@
       {
         "name": "engine",
         "path": "src/core/engine",
-        "description": "21 个 TypeScript 文件（深度≤2 扫描）",
+        "description": "22 个 TypeScript 文件（深度≤2 扫描）",
         "entryFiles": [
           "src/core/engine/index.ts"
         ],
-        "exportCount": 85
+        "exportCount": 86
       },
       {
         "name": "extension-roots",
@@ -1447,15 +1207,6 @@
         "exportCount": 1
       },
       {
-        "name": "preview",
-        "path": "src/core/preview",
-        "description": "14 个 TypeScript 文件（深度≤2 扫描）",
-        "entryFiles": [
-          "src/core/preview/"
-        ],
-        "exportCount": 32
-      },
-      {
         "name": "project",
         "path": "src/core/project",
         "description": "4 个 TypeScript 文件（深度≤2 扫描）",
@@ -1463,6 +1214,15 @@
           "src/core/project/index.ts"
         ],
         "exportCount": 8
+      },
+      {
+        "name": "project-backend",
+        "path": "src/core/project-backend",
+        "description": "4 个 TypeScript 文件（深度≤2 扫描）",
+        "entryFiles": [
+          "src/core/project-backend/"
+        ],
+        "exportCount": 16
       },
       {
         "name": "project-manager",
@@ -1476,11 +1236,11 @@
       {
         "name": "scene",
         "path": "src/core/scene",
-        "description": "124 个 TypeScript 文件（深度≤2 扫描）",
+        "description": "123 个 TypeScript 文件（深度≤2 扫描）",
         "entryFiles": [
           "src/core/scene/index.ts"
         ],
-        "exportCount": 552
+        "exportCount": 574
       },
       {
         "name": "scripting",
@@ -1494,19 +1254,19 @@
       {
         "name": "simulator",
         "path": "src/core/simulator",
-        "description": "3 个 TypeScript 文件（深度≤2 扫描）",
+        "description": "1 个 TypeScript 文件（深度≤2 扫描）",
         "entryFiles": [
           "src/core/simulator/index.ts"
         ],
-        "exportCount": 54
+        "exportCount": 4
       }
     ]
   },
   "stats": {
     "mcp": 104,
-    "commands": 9,
+    "commands": 7,
     "libModules": 13,
-    "libExports": 158,
+    "libExports": 132,
     "core": 14
   }
 }
